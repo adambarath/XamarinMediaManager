@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<mvx:MvxContentPage
+    xmlns:mvx="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms" 
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:viewModels="clr-namespace:ElementPlayer.Core.ViewModels;assembly=ElementPlayer.Core"
+    xmlns:mm="clr-namespace:MediaManager.Forms;assembly=MediaManager.Forms"
+    x:Class="ElementPlayer.Forms.UI.Pages.RepeatShuffleTestPage" 
+    x:TypeArguments="viewModels:RepeatShuffleTestViewModel">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical">
+            <mvx:MvxListView ItemsSource="{Binding Mp3UrlList}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <mvx:MvxViewCell>
+                            <StackLayout HorizontalOptions="StartAndExpand" Orientation="Horizontal">
+                                <Label Text="{Binding .}" />
+                            </StackLayout>
+                        </mvx:MvxViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </mvx:MvxListView>
+
+            <Label Text="{Binding CurrentTitle}" TextColor="Black" />
+            <Label Text="{Binding TotalPlayed}"  TextColor="Black" />
+
+            <StackLayout Orientation="Horizontal">
+                <Button Text="Prev" Command="{Binding PrevCommand}" />
+                <Button Text="PlayPause" Command="{Binding PlayPauseCommand}" />
+                <Button Text="Next" Command="{Binding NextCommand}" />
+            </StackLayout>
+
+            <Button Text="ToggleRepeat" Command="{Binding ToggleRepeatCommand}" />
+            <Button Text="ToggleShuffle" Command="{Binding ToggleShuffleCommand}" />
+        </StackLayout>
+    </ContentPage.Content>
+</mvx:MvxContentPage>

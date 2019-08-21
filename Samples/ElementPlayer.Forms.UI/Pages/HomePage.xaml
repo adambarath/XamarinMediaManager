@@ -8,16 +8,21 @@
     x:Class="ElementPlayer.Forms.UI.Pages.HomePage" 
     x:TypeArguments="viewModels:HomeViewModel">
     <ContentPage.Content>
-        <mvx:MvxListView ItemsSource="{bind:MvxBind Items}" ItemClick="{bind:MvxBind ItemSelected}" SelectedItem="{bind:MvxBind ItemSelected}">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <mvx:MvxViewCell>
-                        <StackLayout HorizontalOptions="StartAndExpand" Orientation="Horizontal">
-                            <Label Text="{Binding Title}" />
-                        </StackLayout>
-                    </mvx:MvxViewCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </mvx:MvxListView>
+        <StackLayout>
+
+            <mvx:MvxListView ItemsSource="{bind:MvxBind Items}" ItemClick="{bind:MvxBind ItemSelected}" SelectedItem="{bind:MvxBind ItemSelected}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <mvx:MvxViewCell>
+                            <StackLayout HorizontalOptions="StartAndExpand" Orientation="Horizontal">
+                                <Label Text="{Binding Title}" />
+                            </StackLayout>
+                        </mvx:MvxViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </mvx:MvxListView>
+
+            <Button Text="Repeat/shuffle test" Command="{Binding RepeatShuffleTests}" />
+        </StackLayout>
     </ContentPage.Content>
 </mvx:MvxContentPage>

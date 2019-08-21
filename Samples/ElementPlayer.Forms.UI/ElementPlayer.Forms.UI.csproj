@@ -28,6 +28,9 @@
     <Compile Update="Pages\BrowsePage.xaml.cs">
       <DependentUpon>BrowsePage.xaml</DependentUpon>
     </Compile>
+    <Compile Update="Pages\RepeatShuffleTestPage.xaml.cs">
+      <DependentUpon>RepeatShuffleTestPage.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using ElementPlayer.Core.Assets;
 using MediaManager;
@@ -23,6 +24,8 @@ namespace ElementPlayer.Core.ViewModels
 
         public IMvxAsyncCommand<IMediaItem> ItemSelected => new MvxAsyncCommand<IMediaItem>(SelectItem);
         //new MvxAsyncCommand<IMediaItem>(async (item) => await this.NavigationService.Navigate<PlayerViewModel, IMediaItem>(item));
+
+        public IMvxAsyncCommand RepeatShuffleTests => new MvxAsyncCommand(ExecuteRepeatShuffleTests);
 
         public override Task Initialize()
         {
@@ -82,6 +85,11 @@ namespace ElementPlayer.Core.ViewModels
             {
                 MediaManager.MediaQueue.Add(new MediaItem(item));
             }*/
+        }
+
+        private Task ExecuteRepeatShuffleTests()
+        {
+            return NavigationService.Navigate<RepeatShuffleTestViewModel>();
         }
     }
 }
