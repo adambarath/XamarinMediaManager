@@ -106,11 +106,14 @@ namespace ElementPlayer.Core.ViewModels
         public MvxAsyncCommand ToggleShuffleCommand => new MvxAsyncCommand(async () =>
         {
             MediaManager.ToggleShuffle();
+
+            await RaisePropertyChanged(nameof(MediaManager));
         });
 
         public MvxAsyncCommand ToggleRepeatCommand => new MvxAsyncCommand(async () =>
         {
             MediaManager.ToggleRepeat();
+            await RaisePropertyChanged(nameof(MediaManager));
         });
     }
 }

@@ -23,6 +23,9 @@
 
             <Label Text="{Binding CurrentTitle}" TextColor="Black" />
             <Label Text="{Binding TotalPlayed}"  TextColor="Black" />
+            <Label Text="{Binding MediaManager.ShuffleMode, StringFormat='Shuffle: {0}'}" TextColor="Black" />
+            <Label Text="{Binding MediaManager.RepeatMode, StringFormat='Repeat: {0}'}" TextColor="Black" />
+            
 
             <StackLayout Orientation="Horizontal">
                 <Button Text="Prev" Command="{Binding PrevCommand}" />
